@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:drag_and_drop_lists/drag_and_drop_lists.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:innoscripta/data/draggable_lists.dart';
+import 'package:innoscripta/widgets/timer_class_widget.dart';
 import 'package:innoscripta/model/board.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,13 +31,13 @@ class _HomePageState extends State<HomePage> {
 
   void _startCountDown() {
     setState(() {
-      drag.statess.toString();
+      // drag.statess.toString();
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    _startCountDown();
+    // _startCountDown();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Innoscripta'),
@@ -52,12 +49,12 @@ class _HomePageState extends State<HomePage> {
               onListReorder: onReorderList,
               children: lists),
         ),
-        SizedBox(
-          height: 100,
-          child: Text(
-            drag.statess.toString(),
-          ),
-        ),
+        // SizedBox(
+        //   height: 100,
+        //   child: Text(
+        //     drag.statess.toString(),
+        //   ),
+        // ),
       ]),
     );
   }
@@ -80,7 +77,9 @@ class _HomePageState extends State<HomePage> {
                   // tileColor: Colors.blue,
                   title: Text(item.title),
                   subtitle: Text(item.info),
-                  trailing: Text(item.statess.toString()),
+                  trailing: TimerWidget(
+                    item: item,
+                  ),
                 ),
               ),
             ),
