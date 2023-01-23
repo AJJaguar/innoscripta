@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   appflowy_board: ^0.0.9
   boardview: ^0.2.2
+  drag_and_drop_lists: ^0.3.3
 
 
   # The following adds the Cupertino Icons font to your application.
